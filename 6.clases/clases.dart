@@ -4,18 +4,16 @@ class Persona {
   int? edad;
 
   Persona({this.nombre, this.apellido, this.edad});
+  
   obtenerNombre() => this.nombre;
 }
-//class Persona {
-//String? nombre;
-//String? apellido;
-//int? edad;
 
-//Persona({this.nombre, this.apellido, this.edad});
-//
 class Empleado extends Persona with Aeropuerto {
   String puesto;
-  Empleado(this.puesto) : super(nombre: "juan", apellido: "marin", edad: 15);
+  
+  Empleado(
+    this.puesto,
+  ) : super(nombre: "juan", apellido: "herrera", edad: 15);
 
   Empleado.fromJson(this.puesto);
 }
@@ -32,6 +30,7 @@ class Trabajador implements Empleado {
 
   @override
   String puesto;
+  
   Trabajador(this.puesto);
 
   @override
@@ -40,7 +39,7 @@ class Trabajador implements Empleado {
   @override
   nombreDelAeropuerto(String valor) {
     // TODO: implement nombreDelAeropuerto
-    throw UnimplementedError();
+    return "Valor nombreDelAeropuerto en trabajador";
   }
 
   @override
@@ -66,8 +65,9 @@ void main() {
   Empleado ejemplo = Trabajador("2");
   print(ejemplo.nombreDelAeropuerto("valor"));
 
-  var persona = Persona(nombre: "nombre", apellido: "apellido", edad: 23);
-  //var persona = Persona(nombre:"nombre",apellido:"apellido", edad:23);
+   //var persona =  new Persona('germasn', 'herrera', 55);
+  var persona = Persona(nombre: "German", apellido: "Herrera", edad: 55);
+ 
   print(persona);
 
   var empleado = Empleado.fromJson("cajero");
