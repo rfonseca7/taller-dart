@@ -3,13 +3,14 @@ void main() {
   var visible = isPublic ? 'publico' : 'privado';
 
   var existeTexto = "este es el valor de la variable existente";
-  var texto1 = existeTexto ?? 'valor del texto 1';
+  var text1 = existeTexto ?? 'valor del texto 1';
 
-  //if(isPublic == true){
-  //visible = 'publico';
-  //}else{
-  //visible = 'privado';
-  //}
+  if(isPublic == true)
+    {
+      visible = 'publico';
+    }else{ visible = 'privado';}
+  
+  
   print(visible);
-  print(texto1);
+  print(text1);
 }
